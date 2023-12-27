@@ -37,10 +37,6 @@ import Ads from '@/app/components/Ads';
 
 
 const getSongs = async (id) => {
-  useEffect(() => {
-    AOS.init({ once: true, });
-  }, [])
-
   try {
     const res = await fetch(`${constants.URI}/api/song?id=${id}`);
 
@@ -55,6 +51,11 @@ const getSongs = async (id) => {
 }
 
 const page = async ({ params }) => {
+  
+  useEffect(() => {
+    AOS.init({ once: true, });
+  }, [])
+
   const { song } = await getSongs(params.id)
   const shareUrl = window.location.href
 
