@@ -50,8 +50,8 @@ const getSongs = async (id) => {
   }
 }
 
-const page = async ({ params }) => {
-  
+const Page = async ({ params }) => {
+
   useEffect(() => {
     AOS.init({ once: true, });
   }, [])
@@ -99,4 +99,4 @@ const page = async ({ params }) => {
   )
 }
 
-export default page
+export default Page
